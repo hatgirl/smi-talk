@@ -326,6 +326,35 @@ does not diverge when iterated from $z = 0$ ..."
 %***************************
 
 \begin{frame}
+\frametitle{Markov Chain Twitterbots}
+\footnotesize
+\arraycolsep=3pt
+\medmuskip = 1mu % default: 4mu plus 2mu minus 4mu
+
+	\[ 
+	w = \kbordermatrix{
+	& & & & & & & & & \\
+	You & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+	}
+	
+	\kbordermatrix{
+		& You & have & to & be & able & accept & failure & get & better \\
+		 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+		 & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+		 & 0.0 & 0.0 & 0.0 & 0.\overline{3} & 0.0 & 0.\overline{3} & 0.0 & 0.\overline{3} & 0.0 \\
+		 & 0.0 & 0.0 & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+		 & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+		 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 \\
+		 & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+		 & 0.0 & 0.0 & 0.0 & 0.0 &0.0 & 0.0 & 0.0 & 0.0 & 1.0 \\
+		 & 0.0 & 0.0 & 0.0 & 0.0 &0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+ 	}
+\]
+\end{frame}
+
+%***************************
+
+\begin{frame}
 \frametitle{Recurse Center}
 
 \centering{\huge The Social Rules }
@@ -629,6 +658,8 @@ For a single day and 1 EZbrick...
 %**********************
 \section{Wrap it Up}
 
+\frame{\tableofcontents[currentsection]}
+
 \begin{frame}
 \frametitle{Math helps us answer questions...}
 
@@ -655,11 +686,23 @@ For a single day and 1 EZbrick...
 			\includegraphics[scale=0.3]{xio.png}
 		\column{0.5\textwidth}
 			...about business-critical things
-			
 	\end{columns}
 \end{center}
 
 \end{frame}
+
+%**********************
+
+\begin{frame}
+\frametitle{You give us the confidence to ask questions of our own}
+
+\begin{center}
+\pause
+\huge\textbf{Thank you!}
+\end{center}
+
+\end{frame}
+
 
 %**********************
 \end{document}
