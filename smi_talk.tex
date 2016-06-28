@@ -149,8 +149,12 @@
 
 \begin{frame}
 \frametitle{...Is Mr. Johnson a Tool fan?}
+
 \begin{center}
-	\includegraphics[scale=0.17]{lateralus.jpg}
+	\begin{figure}
+		\includegraphics[scale=0.15]{lateralus.jpg}
+		\caption{Vision Crystal by Alex Grey}
+	\end{figure}
 \end{center}
 
 \end{frame}
@@ -212,8 +216,53 @@ does not diverge when iterated from $z = 0$ ..."
 \frame{\tableofcontents[currentsection]}
 
 \begin{frame}
+\frametitle{R.I.T.}
+
+\begin{center}
+	\includegraphics[scale=0.4]{rit.png}
+\end{center}
 
 \end{frame}
+
+%***************************
+\begin{frame}
+
+\frametitle{R.I.T.}
+\centering\textbf{Elliptic curve cryptography}
+\begin{columns}
+	\column{0.6\textwidth}
+	\begin{figure}
+		\includegraphics[scale=0.1]{ecc.png}
+		
+	\end{figure}
+	\column{0.32\textwidth}
+		\vspace{-0.2in}
+		\begin{center}
+			\footnotesize{
+			\[kP = Q\]
+			Given $P$ and $Q$, solve for $k$.}
+		\end{center}
+\end{columns}	
+	
+\begin{columns}
+	\column{0.5\textwidth}
+	\begin{figure}
+		\includegraphics[scale=0.15]{lattice_crypto.jpg}
+		\caption{\textbf{Lattice cryptography}}
+	\end{figure}
+	\column{0.5\textwidth}
+	\begin{figure}
+		\textbf{RSA} \\
+		Let $p$ and $q$ be two distinct large primes \\
+		Let $n = pq$ \\
+		Given $n$, find $p$ and $q$
+		
+	\end{figure}
+\end{columns}
+
+\end{frame}
+%***************************
+
 
 %***************************
 \section{Recurse Center}
@@ -226,10 +275,11 @@ does not diverge when iterated from $z = 0$ ..."
 	\includegraphics[width=0.3\textwidth]{recurse_center.png}
 \end{center}
 
-\pause
 \begin{center}
 ``The Recurse Center is a free, self-directed, educational retreat for people who want to get better at programming, whether they've been coding for three decades or three months." \\
-- Recurse Center landing page (www.recurse.com)
+
+
+- Recurse Center landing page
 \end{center}
 
 \end{frame}
@@ -306,17 +356,17 @@ does not diverge when iterated from $z = 0$ ..."
 
 \[ M_{i,j} = P(\text{word}_j \; | \; \text{word}_i) \]
 \[
-	\kbordermatrix{
+\kbordermatrix{
 		& You & have & to & be & able & accept & failure & get & better \\
-		You & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
-		have & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
-		to & 0.0 & 0.0 & 0.0 & 0.\overline{3} & 0.0 & 0.\overline{3} & 0.0 & 0.\overline{3} & 0.0 \\
-		be & 0.0 & 0.0 & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
-		able & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
-		accept & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 \\
-		failure & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
-		get & 0.0 & 0.0 & 0.0 & 0.0 &0.0 & 0.0 & 0.0 & 0.0 & 1.0 \\
-		better & 0.0 & 0.0 & 0.0 & 0.0 &0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+		You & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		have & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		to & 0 & 0 & 0 & 0.\overline{3} & 0 & 0.\overline{3} & 0 & 0.\overline{3} & 0 \\
+		be & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+		able & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		accept & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+		failure & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		get & 0 & 0 & 0 & 0 &0 & 0 & 0 & 0 & 1 \\
+		better & 0 & 0 & 0 & 0 &0 & 0 & 0 & 0 & 0 \\
  	}
 \]
 
@@ -332,22 +382,25 @@ does not diverge when iterated from $z = 0$ ..."
 \medmuskip = 1mu % default: 4mu plus 2mu minus 4mu
 
 	\[ 
-	w = \kbordermatrix{
-	& & & & & & & & & \\
-	You & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
-	}
-	
+	\kbordermatrix{
+		& &  & to & & & & & & \\
+		& 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\}
 	\kbordermatrix{
 		& You & have & to & be & able & accept & failure & get & better \\
-		 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
-		 & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
-		 & 0.0 & 0.0 & 0.0 & 0.\overline{3} & 0.0 & 0.\overline{3} & 0.0 & 0.\overline{3} & 0.0 \\
-		 & 0.0 & 0.0 & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
-		 & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
-		 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 \\
-		 & 0.0 & 0.0 & 1.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
-		 & 0.0 & 0.0 & 0.0 & 0.0 &0.0 & 0.0 & 0.0 & 0.0 & 1.0 \\
-		 & 0.0 & 0.0 & 0.0 & 0.0 &0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+		 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		 & 0 & 0 & 0 & 0.\overline{3} & 0 & 0.\overline{3} & 0 & 0.\overline{3} & 0 \\
+		 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+		 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+		 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		 & 0 & 0 & 0 & 0 &0 & 0 & 0 & 0 & 1 \\
+		 & 0 & 0 & 0 & 0 &0 & 0 & 0 & 0 & 0 \\
+ 	} \]
+ 	\[
+ 	= \kbordermatrix{
+ 		& & & & be & & accept& & get & \\
+ 		& 0 & 0 & 0 & 0.\overline{3} & 0 & 0.\overline{3} & & 0.\overline{3} & 0 \\
  	}
 \]
 \end{frame}
@@ -386,6 +439,7 @@ does not diverge when iterated from $z = 0$ ..."
 \frame{\tableofcontents[currentsection]}
 
 \begin{frame}
+\frametitle{Software Engineering}
     \begin{figure}
         \centering
         \begin{minipage}{.5\textwidth}
@@ -410,6 +464,7 @@ Soon to be.....
 %***************************
 
 \begin{frame}
+\frametitle{Software Engineering}
 \begin{figure}
 	\begin{center}
 		\includegraphics[scale=0.50]{xio_logo} 
@@ -418,6 +473,7 @@ Soon to be.....
 
 \begin{columns}
 	\column{0.3\textwidth}
+		\vspace{-0.2in}
 		\begin{figure}
 			\includegraphics[scale=0.5]{xio.png}
 			\caption{Cluster}
@@ -698,8 +754,18 @@ For a single day and 1 EZbrick...
 
 \begin{center}
 \pause
-\huge\textbf{Thank you!}
+\huge{\textbf{Thank you!}}
+
+\pause
+
+\vspace{0.3in}
+\small{
+Email: optimistindustries@gmail.com \\
+Web: optimistindustries.com \\
+Twitter: @optimistsinc
+}
 \end{center}
+
 
 \end{frame}
 
