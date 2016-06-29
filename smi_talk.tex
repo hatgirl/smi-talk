@@ -76,14 +76,6 @@
 \end{frame}
 
 %***************************
-\section{Introduction}
-\frame{\tableofcontents[currentsection]}
-
-\begin{frame}
-
-\end{frame}
-
-%***************************
 \section{High School}
 \frame{\tableofcontents[currentsection]}
 
@@ -94,7 +86,7 @@
 	
 	\includegraphics[scale=0.35]{bartpianist.jpg}
 \end{center}
-
+	
 \end{frame}
 %***************************
 
@@ -208,8 +200,9 @@ does not diverge when iterated from $z = 0$ ..."
 %***************************
 \begin{frame}
 \frametitle{What Mr. Johnson Taught Me}
-	Math is a set of tools for asking good questions and getting sound answers.
-
+\begin{center}
+	How much fun it is to ask good questions and use math to get sound answers.
+\end{center}
 \end{frame}
 %***************************
 \section{College}
@@ -224,43 +217,7 @@ does not diverge when iterated from $z = 0$ ..."
 
 \end{frame}
 
-%***************************
-\begin{frame}
 
-\frametitle{R.I.T.}
-\centering\textbf{Elliptic curve cryptography}
-\begin{columns}
-	\column{0.6\textwidth}
-	\begin{figure}
-		\includegraphics[scale=0.1]{ecc.png}
-		
-	\end{figure}
-	\column{0.32\textwidth}
-		\vspace{-0.2in}
-		\begin{center}
-			\footnotesize{
-			\[kP = Q\]
-			Given $P$ and $Q$, solve for $k$.}
-		\end{center}
-\end{columns}	
-	
-\begin{columns}
-	\column{0.5\textwidth}
-	\begin{figure}
-		\includegraphics[scale=0.15]{lattice_crypto.jpg}
-		\caption{\textbf{Lattice cryptography}}
-	\end{figure}
-	\column{0.5\textwidth}
-	\begin{figure}
-		\textbf{RSA} \\
-		Let $p$ and $q$ be two distinct large primes \\
-		Let $n = pq$ \\
-		Given $n$, find $p$ and $q$
-		
-	\end{figure}
-\end{columns}
-
-\end{frame}
 %***************************
 
 
@@ -500,7 +457,7 @@ Soon to be.....
 An engineer at EZIO is trying to design a new storage device
 \vspace{0.2in}
 	\begin{itemize}
-		\item RealCompany SSDs have an annual failure rate of 9 in 1000
+		\item RealCompany SSDs have an annual failure probability of 0.009
 		\pause
 		\vspace{0.1in}
 		\item The engineer wants each EZbrick to contain 25 drives
@@ -524,7 +481,7 @@ What is the probability of a drive failure in any of those 100 EZbricks over the
 
 \begin{center}
 	\begin{tabular}{ | c | c | }
-		\hline Annual failure rate & 0.009 \\
+		\hline Annual failure probability & 0.009 \\
 		\hline Drives per EZbrick & 25 \\
 		\hline EZbrick lifetime & 5 years \\
 		\hline EZbricks & 100 \\
@@ -603,114 +560,6 @@ This is going to happen
  
 \end{frame}
 
-%***************************
-\begin{frame}
-\frametitle{Word Problem II!}
-
-	\begin{center}
-		We've dealt with a single disk failure, but what about 2 disk failures?!?! At the SAME TIME?!?!
-	\end{center}
-	
-\end{frame}
-%***************************
-
-%***************************
-\begin{frame}
-\frametitle{Word Problem II!}
-	
-	\begin{center}
-		What counts as ``the same time?" \\
-		How long does it take for a disk to fail and then be recovered? \\
-		
-		\pause 
-		\vspace{0.2in}
-		Let's play it safe and say a whole day. 
-	\end{center}
-	
-\end{frame}
-%***************************
-
-\begin{frame}
-\frametitle{Word Problem II!}
-
-\begin{center}
-	\begin{tabular}{ | c | c | }
-		\hline Annual failure rate & 0.009 \\
-		\hline Drives per EZbrick & 25 \\
-		\hline EZbrick lifetime & 5 years \\
-		\hline EZbricks & 100 \\
-		\hline 	
-	\end{tabular}
-\end{center}
-
-\begin{center}
-	We have annual failure rate... but we need daily failure rate.
-
-\pause
-
-\[ P(\text{disk failure in N years}) = 1 - (1 - 0.009)^N \]
-\vspace*{-\baselineskip} \pause  \[ = 1 - (1 - 0.009)^{N*(365/365)} \]
-\vspace*{-\baselineskip} \pause \[ = 1 - (1 - 0.009)^{(1/365)^{N*365}} \]
-\vspace*{-\baselineskip} \pause \[ = 1 - 0.991^{(1/365)^{N*365}}\]
-\vspace*{-\baselineskip} \pause \[ \approx 1 - (0.9999752)^{N*365}\]
-\vspace*{-\baselineskip} \pause \[ P(\text{disk failure in N days}) \approx 1 - (1 - 0.0000248) ^N \]
-
-\end{center}
-
-	
-\end{frame}
-%***************************
-
-\begin{frame}
-\frametitle{Word Problem II!}
-
-\begin{center}
-	\begin{tabular}{ | c | c | }
-		\hline Annual failure rate & 0.009 \\
-		\hline Drives per EZbrick & 25 \\
-		\hline EZbrick lifetime & 5 years \\
-		\hline EZbricks & 100 \\
-		\hline Daily failure rate & 0.0000248 \\
-		\hline
-	\end{tabular}
-\end{center}
-
-\begin{center}
-For a single day and 1 EZbrick...
-	\[P(>\text{1 disk failure}) = P( \geq \text{1 disk failure}) - P(\text{exactly 1 disk failure})  \]
-\vspace*{-\baselineskip} \pause	\[ = (1 - (1 - 0.0000248)^{25}) - {25\choose 1}(0.0000248)(1 - 0.0000248)^{24}\]
-\vspace*{-0.5\baselineskip} \pause\[0.000619816 - 0.000619631 \approx 1.85\times10^{-7} \]
-
-\end{center}
-	
-\end{frame}
-
-%**********************
-
-\begin{frame}
-\frametitle{Word Problem II!}
-
-\begin{center}
-	\begin{tabular}{ | c | c | }
-		\hline Annual failure rate & 0.009 \\
-		\hline Drives per EZbrick & 25 \\
-		\hline EZbrick lifetime & 5 years \\
-		\hline EZbricks & 100 \\
-		\hline Daily failure rate & 0.0000248 \\
-		\hline
-	\end{tabular}
-\end{center}
-
-\begin{center}
-\[P( >1\text{ failure in 1 EZbrick over 1 day}) \approx 1.85 \times 10^{-7}\]
-\vspace*{-0.5\baselineskip} \pause \[P( >1\text{ failure in 1 EZbrick over lifetime}) = 1 - (1 - 1.85\times 10^{-7})^{365*5} \]
-\[ \approx 0.000338\]
-\vspace*{-0.5\baselineskip} \pause\[ P( > 1 \text{ failure in 100 EZbricks over lifetime}) = 1 - (1 - 0.000338)^{100} \]
-\[\approx 0.0332 \]
-\end{center}
-
-\end{frame}
-
 %**********************
 \section{Wrap it Up}
 
@@ -750,7 +599,7 @@ For a single day and 1 EZbrick...
 %**********************
 
 \begin{frame}
-\frametitle{You give us the confidence to ask questions of our own}
+\frametitle{You give us the confidence to answer questions of our own}
 
 \begin{center}
 \pause
